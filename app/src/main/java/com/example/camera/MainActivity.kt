@@ -1,22 +1,16 @@
 package com.example.camera
 
 import android.app.Activity
-import android.content.ActivityNotFoundException
 import android.content.Intent
-import android.graphics.Bitmap
 import android.graphics.BitmapFactory
 import android.net.Uri
 import android.os.Bundle
 import android.os.Environment
 import android.provider.MediaStore
-import android.widget.ImageView
-import androidx.activity.enableEdgeToEdge
 import androidx.activity.result.ActivityResult
 import androidx.activity.result.contract.ActivityResultContracts
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.content.FileProvider
-import androidx.core.view.ViewCompat
-import androidx.core.view.WindowInsetsCompat
 import com.example.camera.databinding.ActivityMainBinding
 import java.io.File
 import java.text.SimpleDateFormat
@@ -59,7 +53,7 @@ class MainActivity : AppCompatActivity() {
             result: ActivityResult ->
         if(result.resultCode == Activity.RESULT_OK)
         {
-            val intent = result.data
+            //val intent = result.data
             //val imageBitmap = intent?.extras?.get("data") as Bitmap
             val imageBitmap = BitmapFactory.decodeFile(file.toString())
             val imageView = binding.imageView
