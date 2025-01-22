@@ -19,6 +19,9 @@ import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 import com.example.camera.databinding.ActivityMainBinding
 import java.io.File
+import java.text.SimpleDateFormat
+import java.util.Date
+import java.util.Locale
 
 class MainActivity : AppCompatActivity() {
 
@@ -74,7 +77,8 @@ class MainActivity : AppCompatActivity() {
         //El nom del fitxer serà "IMG_" seguit del temps actual en milisegons acabat en _. Ho indiquem al prefix:
         //L'extensió l'indicarem al "sufix" i serà -jpg
 
-        file = File.createTempFile("ERNEST_${System.currentTimeMillis()}_",".png", dir)
+        val date = SimpleDateFormat("dd-MM-yyyy", Locale.getDefault()).format(Date())
+        file = File(dir,"ERNEST_${date}.png")
     }
 
 }
